@@ -45,7 +45,9 @@ const getImages = () => {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <GalleryList 
+        galleryList={galleryList}
+        />
       </div>
     );
 }
