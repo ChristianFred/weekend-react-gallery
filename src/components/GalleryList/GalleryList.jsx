@@ -1,6 +1,6 @@
 import GalleryItem from '../GalleryItem/GalleryItem';
 
-function GalleryList({galleryList, changeLikes}) {
+function GalleryList({galleryList, changeLike}) {
     return(
         <section>
             <table>
@@ -9,7 +9,7 @@ function GalleryList({galleryList, changeLikes}) {
                         <GalleryItem
                         key={item.id}
                         item={item}
-                        changeLikes={changeLikes}
+                        changeLike={changeLike}
                         />
                     ))}
                 </tbody>

@@ -1,12 +1,25 @@
-function GalleryItem({item, changeLikes}) {
+function GalleryItem({item, changeLike}) {
+
+    function PicFlipper(item) {
+        let binaryFlip = 1;
+        if (binaryFlip === 1) {
+            binaryFlip = 0
+            return
+            <td>{item.description}</td>
+        }
+        else if (binaryFlip === 0) {
+            binaryFlip = 1
+            return
+            <img src = { item.path }/>
+        }
+    }
     return (
         <tr key={item.id}> 
-            <img src={item.path}/>
-            <td>{item.description}</td>
+            <img src={item.path} />
+            <PicFlipper />
             <td>{item.likes}</td>
             <td>
-                <button onClick={() => changeLikes(item, 'up')}>Like this Image</button>
-                <button onClick={() => changeLikes(item, 'down')}>Dislike this Image</button>
+                <button onClick={() => changeLike(item.id)}>Like this Image</button>
             </td>
         </tr>
     );

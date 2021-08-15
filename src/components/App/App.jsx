@@ -11,6 +11,7 @@ let [galleryList, setGalleryList] = useState([]);
 
 useEffect(() => {
   getImages();
+  changeLike();
 });
 
 const getImages = () => {
@@ -25,19 +26,17 @@ const getImages = () => {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+const changeLike = (item) => {
+  axios 
+    .put(`/gallery/like/${item}`)
+    .then((response) =>{
+      getImages();
+    })
+    .catch((error) => {
+      alert(`Couldn't update likes.`);
+      console.log('Error updating Likes', error);
+    });
+};
 
     return (
       <div className="App">
@@ -47,6 +46,7 @@ const getImages = () => {
         <p>Gallery goes here</p>
         <GalleryList 
         galleryList={galleryList}
+        changeLike={changeLike}
         />
       </div>
     );
