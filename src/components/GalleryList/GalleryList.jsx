@@ -3,7 +3,7 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 function GalleryList({galleryList, changeLikes}) {
     return(
         <section>
-            <table>g
+            <table>
                 <tbody>
                     {galleryList.map((item) => (
                         <GalleryItem
@@ -15,7 +15,6 @@ function GalleryList({galleryList, changeLikes}) {
                 </tbody>
             </table>
         </section>
-
-    )
+    );
 }
 export default GalleryList;

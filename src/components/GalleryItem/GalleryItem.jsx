@@ -1,7 +1,7 @@
 function GalleryItem({item, changeLikes}) {
     return (
         <tr key={item.id}> 
-            <td>{item.path}</td>
+            <img src={item.path}/>
             <td>{item.description}</td>
             <td>{item.likes}</td>
             <td>
